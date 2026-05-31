@@ -1,0 +1,25 @@
+{
+  "name": "portfollio",
+  "version": "1.0.0",
+  "description": "This is my portfolio site",
+  "license": "ISC",
+  "author": "Shivam Kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.6.3",
+    "nodemailer": "^8.0.10",
+    "swiper": "^12.2.0"
+  }
+}

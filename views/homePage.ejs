@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=light_mode" />
+    <title>Shivam_Kumar_Portfolio</title>
+</head>
+
+<body>
+    <div class="container-xxl p-0 m-auto dark mainContainer">
+        <% if (flash && flash.length> 0) { %>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast align-items-center text-bg-secondary border-0 show" role="alert">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <%= flash %>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                            data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+                <!-- ===== HEADER / NAVBAR ===== -->
+                <nav class="navbar navbar-expand-lg header sticky-top px-3 px-lg-4">
+                    <div class="container-fluid">
+                        <!-- LEFT : LOGO -->
+                        <a class="navbar-brand nav_left p-0 m-0" href="/">
+                            <img src="/img/logo.png" alt="Logo">
+                        </a>
+                        <!-- MOBILE RIGHT -->
+                        <div class="d-flex align-items-center gap-2 d-lg-none">
+                            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <!-- CENTER NAV -->
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav nav_center mx-auto">
+                                <li class="nav-item">
+                                    <a href="#home" class="nav-link nav_header">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#about" class="nav-link nav_header">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#services" class="nav-link nav_header">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#education" class="nav-link nav_header">Education</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#project" class="nav-link nav_header">Project</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contact" class="nav-link nav_header">Contact</a>
+                                </li>
+                            </ul>
+                            <!-- MOBILE HIRE BUTTON -->
+                            <div class="d-lg-none text-center pb-3">
+                                <a href="#hireMe" class="hireMe_button">
+                                    Get In Touch <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- DESKTOP RIGHT -->
+                        <div class="nav_right d-none d-lg-flex">
+                            <a href="#hireMe" class="hireMe_button">
+                                Get In Touch <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container-fluid h-auto p-0">
+                    <!-- ===== HOME SECTION ===== -->
+                    <section id="home">
+                        <div class="container-xl py-4">
+                            <div class="row align-items-center m-0 g-5 py-3">
+                                <!-- Text side -->
+                                <div class="col-12 col-md-6 order-2 order-md-1">
+                                    <div class="frontPage_details px-2 px-md-4">
+                                        <h6 class="pb-2">AVAILABLE FOR WORK</h6>
+                                        <h3 class="pb-3">Hi, I'm <span>Shivam Kumar</span></h3>
+                                        <h5 class="pb-4">
+                                            Freelance <b>MERN Stack Developer &amp; Full Stack Web Developer</b>.
+                                            I build modern, scalable, and user-friendly web applications with clean UI,
+                                            powerful backend, and seamless user experience.
+                                        </h5>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="#project"
+                                                class="project_view_button text-black size-button text-decoration-none d-flex align-items-center justify-content-center">
+                                                View My Work
+                                            </a>
+                                            <a href="#contact"
+                                                class="contact_view_button text-black size-button text-decoration-none d-flex align-items-center justify-content-center">
+                                                Get in touch
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr class="frontPage_line my-4 mx-2 mx-md-4">
+                                    <div class="frontPage_subscription d-flex gap-4 px-2 px-md-4">
+                                        <span class="text-center">
+                                            <h6>34+</h6>
+                                            <p>Projects done</p>
+                                        </span>
+                                        <span class="text-center">
+                                            <h6>1+</h6>
+                                            <p>Happy Clients</p>
+                                        </span>
+                                        <span class="text-center">
+                                            <h6>1y+</h6>
+                                            <p>Experience</p>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Image side -->
+                                <div class="col-12 col-md-6 order-1 order-md-2 text-center">
+                                    <img src="img/New_Profile.jpeg" alt="Profile Pic"
+                                        class="profile_pic img-fluid mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ===== ABOUT SECTION ===== -->
+                    <section id="about">
+                        <div class="container-xl py-5">
+                            <div class="row align-items-center g-5 m-0 p-0">
+                                <!-- Image side -->
+                                <div class="col-12 col-md-4 text-center m-0">
+                                    <img src="img/Profile.jpeg" alt="Profile Pic"
+                                        class="about_profile_pic img-fluid mx-auto p-0">
+                                </div>
+                                <!-- Text side -->
+                                <div class="col-12 col-md-8">
+                                    <p class="about_header">ABOUT ME</p>
+                                    <h1 class="about_title">A Bit About <br class="d-none d-md-block"> who I am</h1>
+                                    <p class="about_para pt-2">
+                                        I'm Shivam Kumar, a passionate Full Stack Developer specializing in the MERN
+                                        Stack.
+                                        I build modern, scalable and responsive web applications with clean frontend
+                                        interfaces,
+                                        powerful backend systems and seamless user experiences.
+                                    </p>
+                                    <p class="about_para pb-3">
+                                        From designing interactive UIs to developing REST APIs and managing databases, I
+                                        enjoy
+                                        creating complete end-to-end web solutions. I'm constantly learning new
+                                        technologies and
+                                        improving my skills to become a top-tier full stack engineer.
+                                    </p>
+                                    <div class="stack_tools d-flex flex-wrap gap-2">
+                                        <span class="skill">HTML</span>
+                                        <span class="skill">CSS</span>
+                                        <span class="skill">JavaScript</span>
+                                        <span class="skill">React.js</span>
+                                        <span class="skill">Redux</span>
+                                        <span class="skill">Redux-Saga</span>
+                                        <span class="skill">Zod</span>
+                                        <span class="skill">Tailwind CSS</span>
+                                        <span class="skill">Bootstrap</span>
+                                        <span class="skill">Node.js</span>
+                                        <span class="skill">Express.js</span>
+                                        <span class="skill">MongoDB</span>
+                                        <span class="skill">REST APIs</span>
+                                        <span class="skill">Git &amp; GitHub</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ===== SERVICES SECTION ===== -->
+                    <section id="services">
+                        <div class="container-xl py-5">
+                            <p class="service_header">WHAT I DO</p>
+                            <h3 class="service_title mb-4">Services</h3>
+                            <!-- Bootstrap grid: 1 col mobile, 2 col tablet, 3 col desktop -->
+                            <div class="row g-4" id="servicesGrid"></div>
+                        </div>
+                    </section>
+                    <!-- ===== EDUCATION SECTION ===== -->
+                    <section id="education">
+                        <div class="container-xl py-2">
+                            <div class="row">
+                                <div class="col-12 text-center py-5">
+                                    <p class="service_header fs-4">Educational Qualification</p>
+                                    <div class="education_box mb-4">
+                                        <div class="batch_badge">
+                                            2023 - 2027
+                                        </div>
+                                        <div class="edu_icon">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                        <h2 class="course_name">
+                                            Bachelor of Technology (B.Tech CSE)
+                                        </h2>
+                                        <h3 class="college_name">
+                                            DR. C.V. Raman University
+                                        </h3>
+                                        <p class="college_location">
+                                            Vaishali, Bihar
+                                        </p>
+                                        <div class="status pursuing">
+                                            Pursuing
+                                        </div>
+                                    </div>
+                                    <div class="education_box mb-4">
+                                        <div class="batch_badge">
+                                            2021 - 2023
+                                        </div>
+                                        <div class="edu_icon">
+                                            <i class="fa-solid fa-school"></i>
+                                        </div>
+                                        <h2 class="course_name">
+                                            Intermediate (Class XII)
+                                        </h2>
+                                        <h3 class="college_name">
+                                            S.N.S College
+                                        </h3>
+                                        <p class="college_location">
+                                            Vaishali, Bihar
+                                        </p>
+                                        <div class="status pursuing">
+                                            Completed
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ===== PROJECT SECTION (placeholder) ===== -->
+                    <section id="project">
+                        <div class="container-xl py-5">
+                            <div class="row">
+                                <div class="col-12 px-5 d-flex justify-content-center flex-column">
+                                    <p class="project_Header mb-2">All Projects</p>
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <% projects.forEach((project)=> { %>
+                                                <div class="swiper-slide">
+                                                    <div class="card" style="height :400px">
+                                                        <img src="<%= project.image %>" alt="project_image"
+                                                            class="project_image">
+                                                        <div class="card-body">
+                                                            <h3 class="card_header">
+                                                                <%= project.title %>
+                                                            </h3>
+                                                            <p class="card_description">
+                                                                <%= project.description %>
+                                                            </p>
+                                                            <a href="<%= project.github %>" target="_blank"
+                                                                class="me-3">
+                                                                <u class="text-white">GitHub</u>
+                                                            </a>
+                                                            <a href="<%= project.liveDemo %>" target="_blank"
+                                                                class="me-3">
+                                                                <u class="text-white">Live Demo</u>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+                                        </div>
+                                        <!-- pehle arrows -->
+                                        <div class="swiper-button-next">
+                                        </div>
+                                        <div class="swiper-button-prev">
+                                        </div>
+                                        <!-- phir dots neeche -->
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ===== CONTACT SECTION (placeholder) ===== -->
+                    <section id="contact">
+                        <div class="container-xl p-4">
+                            <div class="row">
+                                <div class="col-12 contactBox py-3 d-flex justify-content-between backgroundContact">
+                                    <div class="contact_left p-5">
+                                        <p class="contact_header">GET IN TOUCH</p>
+                                        <h3 class="contact_title mb-4 fs-1">Let's work <br />together</h3>
+                                        <p class="description_Contact">I am open to build modern, scalable, and
+                                            user-friendly
+                                            web
+                                            applications with clean UI, powerful backend, and seamless user experience.
+                                        </p>
+                                        <div class="contact_section">
+                                            <div class="contact_item mb-2">
+                                                <div class="contact_icon">
+                                                    <a href="mailto:shivamsinghhjp2@gmail.com" class="contact_icon_box">
+                                                        <i class="fa-solid fa-envelope text-secondary"></i>
+                                                    </a>
+                                                    <span class="contact_details">
+                                                        shivamsinghhjp2@gmail.com
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="contact_item mb-2">
+                                                <div class="contact_icon"><a
+                                                        href="https://www.linkedin.com/in/shivamsinghrajput0055/"
+                                                        target="_blank" class="contact_icon_box">
+                                                        <i class="fa-brands fa-linkedin text-secondary "></i>
+                                                    </a>
+                                                    <span
+                                                        class="contact_details">https://www.linkedin.com/in/shivamsinghrajput0055</span>
+                                                </div>
+                                            </div>
+                                            <div class="contact_item mb-2">
+                                                <div class="contact_icon"><a href="https://github.com/ShivamRajput0055/"
+                                                        target="_blank" class="contact_icon_box">
+                                                        <i class=" fa-brands fa-github text-secondary"></i>
+                                                    </a><span
+                                                        class="contact_details">https://github.com/ShivamRajput0055</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contact_right">
+                                        <form action="/contact" method="POST">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6 col-12">
+                                                    <label class="form-label mt-1 text-start d-block">
+                                                        Name*
+                                                    </label>
+                                                    <input type="text" name="name" class="form-control"
+                                                        placeholder="Enter your name..." />
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <label class="form-label text-start d-block mt-1">
+                                                        Email*
+                                                    </label>
+                                                    <input type="email" name="email" class="form-control"
+                                                        placeholder="Enter your email address..." />
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <label class="form-label text-start d-block mt-1">
+                                                        Subject*
+                                                    </label>
+                                                    <input type="text" name="subject" class="form-control"
+                                                        placeholder="Enter your Subject..." />
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <label class="form-label text-start d-block mt-1">
+                                                        Message*
+                                                    </label>
+                                                    <textarea name="message" class="form-control"
+                                                        placeholder="Enter your message..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="my-3">
+                                                <button type="submit" class="sendButton btn btn-primary w-100 my-3">Send
+                                                    Message
+                                                    <i class="fa fa-arrow-right sendMessage"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ===== HIRE ME SECTION (placeholder) ===== -->
+                    <section id="hireMe">
+                        <div class="container-xl py-5">
+                            <div class="row">
+                                <div class="col-12 text-center pt-5">
+                                    <p class="service_header">LET'S WORK TOGETHER</p>
+                                    <h3 class="service_title mb-5">Hire Me</h3>
+                                    <div
+                                        class="contact_info d-flex flex-wrap align-items-center justify-content-center gap-4 mt-4">
+                                        <a href="tel:+917257990055"
+                                            class="contact_item d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-solid fa-phone hireMe_icon text-danger"></i>
+                                            <span>Phone</span>
+                                        </a>
+                                        <a href="mailto:shivamsinghhjp2@gmail.com"
+                                            class="contact_item d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-solid fa-envelope hireMe_icon text-warning"></i>
+                                            <span>Gmail</span>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/shivamsinghrajput0055/" target="_blank"
+                                            class="contact_item d-flex flex-column align-items-center justify-content-center ">
+                                            <i class="fa-brands fa-linkedin hireMe_icon text-primary "></i>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                        <a href="https://github.com/ShivamRajput0055/" target="_blank"
+                                            class="contact_item d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-brands fa-github hireMe_icon text-success"></i>
+                                            <span>GitHub</span>
+                                        </a>
+                                        <a href="/resume/Shivam_Kumar_Resume"
+                                            class="contact_item d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-solid fa-file-arrow-down hireMe_icon text-info"></i>
+                                            <span>Resume</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="footer text-center pb-5">Thanks For Visiting in my portfolio.</div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script>
+        const services = [
+            {
+                icon: "fa-solid fa-code",
+                header: "Frontend Development",
+                description: "I build modern, responsive and high-performance web interfaces using React.js, Tailwind CSS and JavaScript."
+            },
+            {
+                icon: "fa-solid fa-layer-group",
+                header: "MERN Stack Development",
+                description: "Full-stack web applications using MongoDB, Express.js, React and Node.js with complete backend integration."
+            },
+            {
+                icon: "fa-solid fa-mobile-screen-button",
+                header: "Responsive Web Design",
+                description: "Creating mobile-first websites that work perfectly across desktop, tablet and all mobile devices."
+            },
+            {
+                icon: "fa-solid fa-plug",
+                header: "API Integration",
+                description: "Integrating REST APIs, authentication systems and dynamic backend data with clean architecture."
+            },
+            {
+                icon: "fa-solid fa-chart-line",
+                header: "Landing Page Development",
+                description: "Designing fast and conversion-focused landing pages for startups, brands and personal portfolios."
+            },
+            {
+                icon: "fa-solid fa-database",
+                header: "Backend Development",
+                description: "Building secure server-side logic, APIs and database solutions using modern backend technologies."
+            }
+        ];
+        const servicesGrid = document.getElementById("servicesGrid");
+        services.forEach((item, index) => {
+            servicesGrid.innerHTML += `
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="services_box p-4 h-100">
+                        <div class="service_icon mb-3">
+                            <i class="${item.icon}"></i>
+                        </div>
+                        <h2 class="service_skill_Header my-3">${item.header}</h2>
+                        <p class="service_skill_paragraph my-2">${item.description}</p>
+                    </div>
+                </div>
+            `;
+        });
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 22,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                },
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+        const toastEl = document.getElementById('liveToast');
+        if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl, {
+                delay: 3000,   // 3 seconds
+                autohide: true
+            });
+            toast.show();
+        }
+    </script>
+</body>
+
+</html>
