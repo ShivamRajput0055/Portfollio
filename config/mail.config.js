@@ -15,14 +15,15 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: false, // port 587 ke liye false rakho
+  secure: false,
   requireTLS: true,
+  family: 4, // ← Yahi fix karega - force IPv4
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
   tls: {
-    rejectUnauthorized: false, // Render SSL issues ke liye
+    rejectUnauthorized: false,
   },
 });
 if (process.env.NODE_ENV === "development") {
