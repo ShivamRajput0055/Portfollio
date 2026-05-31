@@ -1,16 +1,29 @@
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 dotenv.config();
+// const transporter = nodemailer.createTransport({
+//   // host: "smtp.gmail.com",
+//   // port: 587,
+//   // secure: false,
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.PASSWORD,
+//   },
+//   // family: 4, // ⭐ IMPORTANT FIX (IPv4 force)
+// });
 const transporter = nodemailer.createTransport({
-  // host: "smtp.gmail.com",
-  // port: 587,
-  // secure: false,
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // port 587 ke liye false rakho
+  requireTLS: true,
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
-  // family: 4, // ⭐ IMPORTANT FIX (IPv4 force)
+  tls: {
+    rejectUnauthorized: false, // Render SSL issues ke liye
+  },
 });
 if (process.env.NODE_ENV === "development") {
   //ye sirf ek baar chalega kyu ki ye route pe nhi hain matalb route main rahta toh haarek baar chalta refresh hone ka sath lekin ye act like middleware sirf ek baar chalega
