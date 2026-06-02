@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require("fs");
-const transporter = require("../config/mail.config");
 const projects = [
   {
     id: 1,
@@ -107,58 +106,7 @@ const resumePage = (req, res) => {
   }
 };
 
-const contactPage = async (req, res) => {
-  try {
-    const { name, email, subject, message } = req.body;
-    if (!name || !email || !subject || !message) {
-      return res.status(400).render("errorPage", {
-        error: "All fields are required",
-        code: 400,
-      });
-    }
-    const info = await transporter.sendMail({
-      from: '"Portfolio Message" <kunalsinghhjp2@gmail.com>',
-      to: "shivamsinghhjp2@gmail.com",
-      subject: subject,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-    });
-
-    if (info.rejected.length > 0) {
-      return res.status(500).render("errorPage", {
-        error: "Message could not be delivered",
-        code: 500,
-      });
-    }
-    req.flash("success", "Mail was sent successfully!");
-    return res.status(200).redirect("/#contact");
-  } catch (err) {
-    let statusCode = 500;
-    let errorMessage = "Something went wrong. Please try again.";
-    console.log(err);
-    switch (err.code) {
-      case "ECONNECTION":
-      case "ETIMEDOUT":
-        statusCode = 503;
-        errorMessage = "Service unavailable. Please try again later.";
-        break;
-      case "EAUTH":
-        statusCode = 500;
-        errorMessage = "Server configuration error.";
-        break;
-      case "EENVELOPE":
-        statusCode = 400;
-        errorMessage = "Invalid email address.";
-        break;
-    }
-    return res.status(statusCode).render("errorPage", {
-      error: errorMessage,
-      code: statusCode,
-    });
-  }
-};
 // const contactPage = async (req, res) => {
-//   const { Resend } = require("resend");
-//   const resend = new Resend(process.env.SECRET_KEY_RESEND_EMAIL);
 //   try {
 //     const { name, email, subject, message } = req.body;
 //     if (!name || !email || !subject || !message) {
@@ -167,23 +115,74 @@ const contactPage = async (req, res) => {
 //         code: 400,
 //       });
 //     }
-//     const { data } = await resend.emails.send({
-//       from: "onboarding@resend.dev",
-//       to: "kunalsinghhjp2@gmail.com",
+//     const info = await transporter.sendMail({
+//       from: '"Portfolio Message" <kunalsinghhjp2@gmail.com>',
+//       to: "shivamsinghhjp2@gmail.com",
 //       subject: subject,
-//       text: `Name:${name},Email:${email},Subject:${subject},Message:${message}`,
+//       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
 //     });
-//     console.log(data);
-//     req.flash("success", "Email was sent successfully!!");
+
+//     if (info.rejected.length > 0) {
+//       return res.status(500).render("errorPage", {
+//         error: "Message could not be delivered",
+//         code: 500,
+//       });
+//     }
+//     req.flash("success", "Mail was sent successfully!");
 //     return res.status(200).redirect("/#contact");
-//   } catch (error) {
-//     return res.status(500).render("errorPage", {
-//       error: "Server Error Found",
-//       code: 400,
-//       errorMessage: error,
+//   } catch (err) {
+//     let statusCode = 500;
+//     let errorMessage = "Something went wrong. Please try again.";
+//     console.log(err);
+//     switch (err.code) {
+//       case "ECONNECTION":
+//       case "ETIMEDOUT":
+//         statusCode = 503;
+//         errorMessage = "Service unavailable. Please try again later.";
+//         break;
+//       case "EAUTH":
+//         statusCode = 500;
+//         errorMessage = "Server configuration error.";
+//         break;
+//       case "EENVELOPE":
+//         statusCode = 400;
+//         errorMessage = "Invalid email address.";
+//         break;
+//     }
+//     return res.status(statusCode).render("errorPage", {
+//       error: errorMessage,
+//       code: statusCode,
 //     });
 //   }
 // };
+const contactPage = async (req, res) => {
+  const { Resend } = require("resend");
+  const resend = new Resend(process.env.SECRET_KEY_RESEND_EMAIL);
+  try {
+    const { name, email, subject, message } = req.body;
+    if (!name || !email || !subject || !message) {
+      return res.status(400).render("errorPage", {
+        error: "All fields are required",
+        code: 400,
+      });
+    }
+    const { data } = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "shivamsinghhjp2@gmail.com",
+      subject: subject,
+      text: `Name:${name},Email:${email},Subject:${subject},Message:${message}`,
+    });
+    console.log(data);
+    req.flash("success", "Email was sent successfully!!");
+    return res.status(200).redirect("/#contact");
+  } catch (error) {
+    return res.status(500).render("errorPage", {
+      error: "Server Error Found",
+      code: 400,
+      errorMessage: error,
+    });
+  }
+};
 module.exports = {
   homePage,
   resumePage,
