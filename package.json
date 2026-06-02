@@ -20,6 +20,7 @@
     "express-session": "^1.19.0",
     "mongoose": "^9.6.3",
     "nodemailer": "^8.0.10",
+    "resend": "^6.12.4",
     "swiper": "^12.2.0"
   }
 }

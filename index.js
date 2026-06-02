@@ -1,5 +1,3 @@
-const dns = require("dns");
-dns.setDefaultResultOrder("ipv4first");
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
@@ -8,6 +6,8 @@ const MongoStore = require("connect-mongo").default;
 const personalRoutes = require("./routes/personal.route");
 const connectDB = require("./config/database");
 const flash = require("connect-flash");
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 dotenv.config();
 const app = express();
 connectDB();

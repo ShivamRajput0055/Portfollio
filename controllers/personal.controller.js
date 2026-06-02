@@ -106,6 +106,7 @@ const resumePage = (req, res) => {
     });
   }
 };
+
 const contactPage = async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
@@ -155,6 +156,34 @@ const contactPage = async (req, res) => {
     });
   }
 };
+// const contactPage = async (req, res) => {
+//   const { Resend } = require("resend");
+//   const resend = new Resend(process.env.SECRET_KEY_RESEND_EMAIL);
+//   try {
+//     const { name, email, subject, message } = req.body;
+//     if (!name || !email || !subject || !message) {
+//       return res.status(400).render("errorPage", {
+//         error: "All fields are required",
+//         code: 400,
+//       });
+//     }
+//     const { data } = await resend.emails.send({
+//       from: "onboarding@resend.dev",
+//       to: "kunalsinghhjp2@gmail.com",
+//       subject: subject,
+//       text: `Name:${name},Email:${email},Subject:${subject},Message:${message}`,
+//     });
+//     console.log(data);
+//     req.flash("success", "Email was sent successfully!!");
+//     return res.status(200).redirect("/#contact");
+//   } catch (error) {
+//     return res.status(500).render("errorPage", {
+//       error: "Server Error Found",
+//       code: 400,
+//       errorMessage: error,
+//     });
+//   }
+// };
 module.exports = {
   homePage,
   resumePage,
